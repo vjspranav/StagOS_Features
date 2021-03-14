@@ -1,6 +1,10 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import { useState } from "react";
 import "../styles.css";
 
+const images = require("../../gifs/*.gif");
+console.log(images);
 export default function ImageComponent(props) {
   let [isOpen, setIsOpen] = useState(false);
 
@@ -11,7 +15,7 @@ export default function ImageComponent(props) {
 
   let { title, summary, imageName } = props;
   console.log(title, summary, imageName);
-  let imagePath = "/gifs/" + imageName;
+  let imagePath = images[imageName];
   return (
     <div>
       <img

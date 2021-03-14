@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from "react";
+import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -25,8 +27,8 @@ function createData(title, summary, preview) {
 }
 
 const rows = [
-  createData("F1", "Does F1", "qs_panel_bg_use_new_tint.gif"),
-  createData("F2", "Does F2", "qs_panel_bg_use_new_tint.gif"),
+  createData("F1", "Does F1", "qs_panel_bg_use_new_tint"),
+  createData("F2", "Does F2", "qs_panel_bg_use_new_tint"),
 ];
 console.log(rows);
 const useStyles = makeStyles({

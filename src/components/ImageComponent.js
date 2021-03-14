@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles.css";
 
 export default function ImageComponent(props) {
-  let [isOpen, setIsOpen] = useState(0);
+  let [isOpen, setIsOpen] = useState(false);
 
   let handleShowDialog = () => {
     setIsOpen(!isOpen);
@@ -19,6 +19,8 @@ export default function ImageComponent(props) {
         src={imagePath}
         onClick={handleShowDialog}
         alt="not found"
+        height="200"
+        width="100"
       />
       {isOpen && (
         <dialog

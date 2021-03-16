@@ -10,12 +10,19 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
+
 import ImageComponent from "./components/ImageComponent";
+import { features } from "./data/features.js";
 
 const columns = [
   { id: "title", label: "Name", minWidth: 170 },
   { id: "summary", label: "Summary", minWidth: 100 },
-  { id: "preview", label: "Preview (Tap to enlarge)", minWidth: 170 },
+  {
+    id: "preview",
+    label: "Animation Preview (Tap to enlarge)",
+    align: "center",
+    minWidth: 170,
+  },
 ];
 
 function createData(title, summary, preview) {
@@ -25,11 +32,10 @@ function createData(title, summary, preview) {
     preview: <ImageComponent imageName={preview} />,
   };
 }
-
-const rows = [
-  createData("F1", "Does F1", "qs_panel_bg_use_new_tint"),
-  createData("F2", "Does F2", "qs_panel_bg_use_new_tint"),
-];
+const rows = features.map((e) => {
+  return createData(e.title, e.summary, e.preview);
+});
+Array.forEach;
 console.log(rows);
 const useStyles = makeStyles({
   root: {

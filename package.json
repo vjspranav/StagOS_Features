@@ -20,6 +20,7 @@
     "prebuild": "shx rm -rf dist/*",
     "build": "parcel build ./src/index.html --public-url ./",
     "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose",
+    "deploy": "npm run build && npm run push-gh-pages",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

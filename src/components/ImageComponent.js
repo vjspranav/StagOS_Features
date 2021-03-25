@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import "../styles.css";
+import { Button } from "@material-ui/core";
 
 const images = require("../../gifs/*.gif");
 console.log(images);
@@ -18,14 +19,9 @@ export default function ImageComponent(props) {
   let imagePath = images[imageName];
   return (
     <div>
-      <img
-        className="small"
-        src={imagePath}
-        onClick={handleShowDialog}
-        alt="not found"
-        height="200"
-        width="100"
-      />
+      <Button color="primary" onClick={handleShowDialog}>
+        Preview
+      </Button>
       {isOpen && (
         <dialog
           className="dialog"
